@@ -1,9 +1,12 @@
-package com.lee.control;
+package com.lee.controllers;
 
 import com.lee.bean.UserBean;
 import com.lee.service.UserMapper;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,21 +17,23 @@ import java.util.List;
  */
 
 @RestController
+@RequestMapping("user")
+@Api("user service")
 public class UserController {
 
 	@Autowired
 	private UserMapper userMapper;
 
-	@RequestMapping("/id")
+	@RequestMapping(value = "/id",method = RequestMethod.POST)
+	@ApiOperation(value = "get user by id")
 	public UserBean getUser(@RequestParam(name = "id") int id) {
-		UserBean userBean = userMapper.getUserById(id);
-		return userBean;
+		return userMapper.getUserById(id);
 	}
 
-	@RequestMapping("/lists")
+	@RequestMapping(value = "/lists",method = RequestMethod.GET)
+	@ApiOperation(value = "get user list")
 	public List<UserBean> getUserList() {
-		List<UserBean> userList = userMapper.getUserList();
-		return userList;
+		return userMapper.getUserList();
 	}
 
 }
