@@ -24,6 +24,10 @@ public class UserLogAspect {
 	public Object aroundUserAccess(ProceedingJoinPoint pjp) throws Throwable {
 		log.info("before user access");
 		Object proceed = pjp.proceed();
+		Object[] args = pjp.getArgs();
+		for (Object arg : args) {
+			log.info("arg " + arg.toString());
+		}
 		log.info("after user access");
 		return proceed;
 	}

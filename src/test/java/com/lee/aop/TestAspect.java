@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class TestAspect {
 	private Logger log = LogManager.getLogger(this.getClass());
-	@Before("execution(* com.lee.service.Business.*(..))")
+	@Before("execution(* com.lee.mapper.Business.*(..))")
 	public void before() {
 		log.info("before business");
 	}

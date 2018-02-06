@@ -1,7 +1,7 @@
 package com.lee.controllers;
 
 import com.lee.bean.UserBean;
-import com.lee.service.UserMapper;
+import com.lee.mapper.UserMapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

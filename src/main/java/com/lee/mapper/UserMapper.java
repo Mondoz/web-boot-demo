@@ -1,4 +1,4 @@
-package com.lee.service;
+package com.lee.mapper;
 
 import com.lee.bean.UserBean;
 import org.apache.ibatis.annotations.Param;

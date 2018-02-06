@@ -1,6 +1,6 @@
 package com.lee;
 
-import com.lee.service.Business;
+import com.lee.mapper.Business;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

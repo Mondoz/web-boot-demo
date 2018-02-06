@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.lee.service")
+@MapperScan("com.lee.mapper")
 public class MyApplication {
 
 	public static void main(String[] args) {
