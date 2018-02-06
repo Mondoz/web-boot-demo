@@ -39,10 +39,8 @@ public class UserController {
 	public ResponseBean login(@RequestParam(name = "id") int id,@RequestParam(name = "password") String password) {
 		ResponseBean responseBean = null;
 		UserBean userBean = userMapper.getUserById(id);
-		if (userBean.getPassword().equals(DigestUtils.md5Hex(password))) {
+		if (!userBean.getPassword().equals(DigestUtils.md5Hex(password))) {
 			throw ServiceException.newInstance(ErrorCodes.USER_NOT_FOUND_ERROR);
-		} else {
-
 		}
 		return responseBean;
 	}
