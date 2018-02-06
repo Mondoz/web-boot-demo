@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface UserMapper {
 
-	@Select("SELECT user.id, user.name FROM user INNER JOIN id_test ON id_test.user_id = user.id AND user.id = #{ID}")
+	@Select("SELECT * FROM user WHERE user.id = #{ID}")
 	UserBean getUserById(@Param("ID") int id);
 
 	@Select("SELECT * FROM user")
